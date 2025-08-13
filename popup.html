@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tab Peek</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">☰</div>
+          <div class="titles">
+            <h1>Tab Peek</h1>
+            <p class="subtitle">Smart Title Catcher</p>
+          </div>
+        </div>
+        <div class="toggles">
+          <button id="themeToggle" class="btn btn-ghost" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="card action-card">
+          <button id="fetchBtn" class="btn btn-primary">
+            <span class="btn-icon">🔎</span>
+            <span>Catch Current Tab Title</span>
+          </button>
+          <button id="copyBtn" class="btn btn-secondary" disabled>
+            <span class="btn-icon">📋</span>
+            <span>Copy</span>
+          </button>
+        </section>
+
+        <section id="result" class="card result hidden" aria-live="polite">
+          <div class="tab-meta">
+            <img id="favicon" class="favicon" src="" alt="" />
+            <div class="meta-text">
+              <div id="title" class="title"></div>
+              <div id="url" class="url"></div>
+            </div>
+          </div>
+          <div class="facts">
+            <div class="fact"><span>Title length:</span><strong id="length">0</strong></div>
+            <div class="fact"><span>Captured at:</span><strong id="timestamp">—</strong></div>
+          </div>
+        </section>
+
+        <section class="card history">
+          <div class="history-head">
+            <h2>History</h2>
+            <div class="history-actions">
+              <button id="clearHistory" class="btn btn-ghost" title="Clear history">🗑️</button>
+              <button id="exportHistory" class="btn btn-ghost" title="Export history JSON">⬇️</button>
+            </div>
+          </div>
+          <ul id="historyList" class="history-list"></ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Built with ❤️ — <a href="https://developer.chrome.com/docs/extensions/" target="_blank">MV3</a></span>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

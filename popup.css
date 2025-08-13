@@ -1,0 +1,125 @@
+:root {
+  --bg: #0b1020;
+  --card: #121931;
+  --text: #e8edff;
+  --muted: #a8b3cf;
+  --brand: #6ea8fe;
+  --brand-2: #8a6efe;
+  --accent: #00d2ff;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+  --bg: #f4f7ff;
+  --card: #ffffff;
+  --text: #0b1020;
+  --muted: #394260;
+  --brand: #2d6cdf;
+  --brand-2: #6a40df;
+  --accent: #0077ff;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 360px;
+  min-height: 480px;
+  background:
+    radial-gradient(120px 140px at -20% -10%, var(--brand-2) 0%, transparent 60%),
+    radial-gradient(160px 160px at 110% -20%, var(--brand) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg));
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.app { padding: 12px; }
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.brand { display: flex; gap: 10px; align-items: center; }
+.logo {
+  display: grid; place-items: center;
+  width: 36px; height: 36px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white; font-weight: 900;
+  box-shadow: 0 6px 20px var(--shadow);
+  transform: rotate(0.0001deg);
+}
+.titles h1 { font-size: 16px; margin: 0; }
+.subtitle { margin: 0; margin-top: 2px; font-size: 12px; color: var(--muted); }
+
+.btn {
+  border: 0; border-radius: 12px; padding: 10px 12px;
+  font-weight: 600;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 6px 16px var(--shadow);
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .08s ease, filter .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active { transform: translateY(1px) scale(0.98); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+}
+.btn-secondary {
+  background: linear-gradient(135deg, var(--accent), var(--brand));
+  color: #001122;
+}
+.btn-ghost {
+  background: transparent; box-shadow: none; color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 12px;
+  margin: 10px 0;
+  box-shadow: 0 10px 30px var(--shadow);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.action-card { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.result.hidden { display: none; }
+.result .tab-meta {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.favicon {
+  width: 20px; height: 20px; border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+}
+.meta-text .title { font-weight: 700; }
+.meta-text .url { font-size: 12px; color: var(--muted); word-break: break-all; }
+.facts { display: flex; gap: 16px; margin-top: 8px; }
+.facts .fact { font-size: 12px; color: var(--muted); }
+.facts .fact strong { color: var(--text); margin-left: 4px; }
+
+.history-head { display: flex; align-items: center; justify-content: space-between; }
+.history-list {
+  list-style: none; padding: 0; margin: 8px 0 0 0; max-height: 180px; overflow: auto;
+}
+.history-list li {
+  display: grid; grid-template-columns: 20px 1fr auto; align-items: center; gap: 8px;
+  padding: 8px; border-radius: 12px; cursor: pointer;
+  transition: background .15s ease, transform .08s ease;
+}
+.history-list li:hover { background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+.history-list img { width: 18px; height: 18px; border-radius: 4px; }
+.item-title { font-size: 12px; font-weight: 600; }
+.item-meta { font-size: 11px; color: var(--muted); }
+.copy-chip {
+  font-size: 11px; padding: 2px 8px; border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+}
+
+.footer { text-align: center; margin-top: 8px; color: var(--muted); font-size: 11px; }
